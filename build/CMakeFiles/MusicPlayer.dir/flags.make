@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/MusicPlayer.dir/includes_CXX.rsp
 
-CXX_FLAGS = -std=gnu++17 -Wall -Wextra
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17
 

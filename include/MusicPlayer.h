@@ -51,6 +51,14 @@ public:
     void loadLibrary(const std::string& path);
     /**===================================================
      * 
+     * Description: Get library
+     *
+     * @param {const std::vector<Song>&} reference of library
+     * @returns {none}  
+     */
+    const MusicLibrary& getLibrary() const;
+    /**===================================================
+     * 
      * Description: Load songs into library
      *
      * @param {const std::string} path - folder path include songs
@@ -73,6 +81,22 @@ public:
      * @returns {const Song*} Current song
      */
     const Song* getCurrentSong();
+    /**===================================================
+     * 
+     * Description: Get upcoming queue
+     *
+     * @param {PlaybackQueue&} reference of queue
+     * @returns {none}  
+     */
+    const PlaybackQueue& getQueueManager() const;
+    /**===================================================
+     * 
+     * Description: Get history
+     *
+     * @param {PlaybackQueue&} reference of history
+     * @returns {none}  
+     */
+    const PlaybackHistory& getHistoryManager() const;
     /**===================================================
      * 
      * Description: Add song into queue
@@ -137,6 +161,14 @@ public:
      * @returns {none}  
      */
     void disableShuffle();
+    /**===================================================
+     * 
+     * Description: Return state of shuffle mode
+     *
+     * @param {none}
+     * @returns {bool} true: shuffle ON --- false: shuffle OFF  
+     */
+    bool isShuffleEnabled() const;
     /**===================================================
      * 
      * Description: Find and play song by ID (immediately)

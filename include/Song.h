@@ -21,7 +21,7 @@ struct Song {
 private:
     static int getNextId(){
         static std::atomic<int> id{0};
-        id++;
+        return id++;
     };
 };
 

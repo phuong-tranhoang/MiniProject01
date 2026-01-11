@@ -128,6 +128,174 @@ MusicPlayer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/build
 .PHONY : MusicPlayer/fast
 
+include/imgui-master/backends/imgui_impl_glfw.obj: include/imgui-master/backends/imgui_impl_glfw.cpp.obj
+.PHONY : include/imgui-master/backends/imgui_impl_glfw.obj
+
+# target to build an object file
+include/imgui-master/backends/imgui_impl_glfw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_glfw.cpp.obj
+.PHONY : include/imgui-master/backends/imgui_impl_glfw.cpp.obj
+
+include/imgui-master/backends/imgui_impl_glfw.i: include/imgui-master/backends/imgui_impl_glfw.cpp.i
+.PHONY : include/imgui-master/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+include/imgui-master/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_glfw.cpp.i
+.PHONY : include/imgui-master/backends/imgui_impl_glfw.cpp.i
+
+include/imgui-master/backends/imgui_impl_glfw.s: include/imgui-master/backends/imgui_impl_glfw.cpp.s
+.PHONY : include/imgui-master/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+include/imgui-master/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_glfw.cpp.s
+.PHONY : include/imgui-master/backends/imgui_impl_glfw.cpp.s
+
+include/imgui-master/backends/imgui_impl_opengl3.obj: include/imgui-master/backends/imgui_impl_opengl3.cpp.obj
+.PHONY : include/imgui-master/backends/imgui_impl_opengl3.obj
+
+# target to build an object file
+include/imgui-master/backends/imgui_impl_opengl3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_opengl3.cpp.obj
+.PHONY : include/imgui-master/backends/imgui_impl_opengl3.cpp.obj
+
+include/imgui-master/backends/imgui_impl_opengl3.i: include/imgui-master/backends/imgui_impl_opengl3.cpp.i
+.PHONY : include/imgui-master/backends/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+include/imgui-master/backends/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_opengl3.cpp.i
+.PHONY : include/imgui-master/backends/imgui_impl_opengl3.cpp.i
+
+include/imgui-master/backends/imgui_impl_opengl3.s: include/imgui-master/backends/imgui_impl_opengl3.cpp.s
+.PHONY : include/imgui-master/backends/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+include/imgui-master/backends/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_opengl3.cpp.s
+.PHONY : include/imgui-master/backends/imgui_impl_opengl3.cpp.s
+
+include/imgui-master/imgui.obj: include/imgui-master/imgui.cpp.obj
+.PHONY : include/imgui-master/imgui.obj
+
+# target to build an object file
+include/imgui-master/imgui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui.cpp.obj
+.PHONY : include/imgui-master/imgui.cpp.obj
+
+include/imgui-master/imgui.i: include/imgui-master/imgui.cpp.i
+.PHONY : include/imgui-master/imgui.i
+
+# target to preprocess a source file
+include/imgui-master/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui.cpp.i
+.PHONY : include/imgui-master/imgui.cpp.i
+
+include/imgui-master/imgui.s: include/imgui-master/imgui.cpp.s
+.PHONY : include/imgui-master/imgui.s
+
+# target to generate assembly for a file
+include/imgui-master/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui.cpp.s
+.PHONY : include/imgui-master/imgui.cpp.s
+
+include/imgui-master/imgui_demo.obj: include/imgui-master/imgui_demo.cpp.obj
+.PHONY : include/imgui-master/imgui_demo.obj
+
+# target to build an object file
+include/imgui-master/imgui_demo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_demo.cpp.obj
+.PHONY : include/imgui-master/imgui_demo.cpp.obj
+
+include/imgui-master/imgui_demo.i: include/imgui-master/imgui_demo.cpp.i
+.PHONY : include/imgui-master/imgui_demo.i
+
+# target to preprocess a source file
+include/imgui-master/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_demo.cpp.i
+.PHONY : include/imgui-master/imgui_demo.cpp.i
+
+include/imgui-master/imgui_demo.s: include/imgui-master/imgui_demo.cpp.s
+.PHONY : include/imgui-master/imgui_demo.s
+
+# target to generate assembly for a file
+include/imgui-master/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_demo.cpp.s
+.PHONY : include/imgui-master/imgui_demo.cpp.s
+
+include/imgui-master/imgui_draw.obj: include/imgui-master/imgui_draw.cpp.obj
+.PHONY : include/imgui-master/imgui_draw.obj
+
+# target to build an object file
+include/imgui-master/imgui_draw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_draw.cpp.obj
+.PHONY : include/imgui-master/imgui_draw.cpp.obj
+
+include/imgui-master/imgui_draw.i: include/imgui-master/imgui_draw.cpp.i
+.PHONY : include/imgui-master/imgui_draw.i
+
+# target to preprocess a source file
+include/imgui-master/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_draw.cpp.i
+.PHONY : include/imgui-master/imgui_draw.cpp.i
+
+include/imgui-master/imgui_draw.s: include/imgui-master/imgui_draw.cpp.s
+.PHONY : include/imgui-master/imgui_draw.s
+
+# target to generate assembly for a file
+include/imgui-master/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_draw.cpp.s
+.PHONY : include/imgui-master/imgui_draw.cpp.s
+
+include/imgui-master/imgui_tables.obj: include/imgui-master/imgui_tables.cpp.obj
+.PHONY : include/imgui-master/imgui_tables.obj
+
+# target to build an object file
+include/imgui-master/imgui_tables.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_tables.cpp.obj
+.PHONY : include/imgui-master/imgui_tables.cpp.obj
+
+include/imgui-master/imgui_tables.i: include/imgui-master/imgui_tables.cpp.i
+.PHONY : include/imgui-master/imgui_tables.i
+
+# target to preprocess a source file
+include/imgui-master/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_tables.cpp.i
+.PHONY : include/imgui-master/imgui_tables.cpp.i
+
+include/imgui-master/imgui_tables.s: include/imgui-master/imgui_tables.cpp.s
+.PHONY : include/imgui-master/imgui_tables.s
+
+# target to generate assembly for a file
+include/imgui-master/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_tables.cpp.s
+.PHONY : include/imgui-master/imgui_tables.cpp.s
+
+include/imgui-master/imgui_widgets.obj: include/imgui-master/imgui_widgets.cpp.obj
+.PHONY : include/imgui-master/imgui_widgets.obj
+
+# target to build an object file
+include/imgui-master/imgui_widgets.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_widgets.cpp.obj
+.PHONY : include/imgui-master/imgui_widgets.cpp.obj
+
+include/imgui-master/imgui_widgets.i: include/imgui-master/imgui_widgets.cpp.i
+.PHONY : include/imgui-master/imgui_widgets.i
+
+# target to preprocess a source file
+include/imgui-master/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_widgets.cpp.i
+.PHONY : include/imgui-master/imgui_widgets.cpp.i
+
+include/imgui-master/imgui_widgets.s: include/imgui-master/imgui_widgets.cpp.s
+.PHONY : include/imgui-master/imgui_widgets.s
+
+# target to generate assembly for a file
+include/imgui-master/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_widgets.cpp.s
+.PHONY : include/imgui-master/imgui_widgets.cpp.s
+
 src/AudioEngine.obj: src/AudioEngine.cpp.obj
 .PHONY : src/AudioEngine.obj
 
@@ -377,6 +545,27 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MusicPlayer
+	@echo ... include/imgui-master/backends/imgui_impl_glfw.obj
+	@echo ... include/imgui-master/backends/imgui_impl_glfw.i
+	@echo ... include/imgui-master/backends/imgui_impl_glfw.s
+	@echo ... include/imgui-master/backends/imgui_impl_opengl3.obj
+	@echo ... include/imgui-master/backends/imgui_impl_opengl3.i
+	@echo ... include/imgui-master/backends/imgui_impl_opengl3.s
+	@echo ... include/imgui-master/imgui.obj
+	@echo ... include/imgui-master/imgui.i
+	@echo ... include/imgui-master/imgui.s
+	@echo ... include/imgui-master/imgui_demo.obj
+	@echo ... include/imgui-master/imgui_demo.i
+	@echo ... include/imgui-master/imgui_demo.s
+	@echo ... include/imgui-master/imgui_draw.obj
+	@echo ... include/imgui-master/imgui_draw.i
+	@echo ... include/imgui-master/imgui_draw.s
+	@echo ... include/imgui-master/imgui_tables.obj
+	@echo ... include/imgui-master/imgui_tables.i
+	@echo ... include/imgui-master/imgui_tables.s
+	@echo ... include/imgui-master/imgui_widgets.obj
+	@echo ... include/imgui-master/imgui_widgets.i
+	@echo ... include/imgui-master/imgui_widgets.s
 	@echo ... src/AudioEngine.obj
 	@echo ... src/AudioEngine.i
 	@echo ... src/AudioEngine.s

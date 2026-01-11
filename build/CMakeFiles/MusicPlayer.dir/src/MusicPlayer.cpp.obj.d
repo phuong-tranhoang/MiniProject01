@@ -216,9 +216,9 @@ CMakeFiles/MusicPlayer.dir/src/MusicPlayer.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/queue \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_heap.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_queue.h \
- C:/msys64/ucrt64/include/taglib/fileref.h \
- C:/msys64/ucrt64/include/taglib/tfile.h \
- C:/msys64/ucrt64/include/taglib/tbytevector.h \
+ C:/msys64/mingw64/include/taglib/fileref.h \
+ C:/msys64/mingw64/include/taglib/tfile.h \
+ C:/msys64/mingw64/include/taglib/tbytevector.h \
  C:/msys64/ucrt64/include/c++/15.2.0/memory \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
@@ -227,24 +227,24 @@ CMakeFiles/MusicPlayer.dir/src/MusicPlayer.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
  C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
  C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
- C:/msys64/ucrt64/include/taglib/taglib_export.h \
- C:/msys64/ucrt64/include/taglib/tiostream.h \
- C:/msys64/ucrt64/include/taglib/taglib.h \
- C:/msys64/ucrt64/include/taglib/tag.h \
- C:/msys64/ucrt64/include/taglib/tstring.h \
- C:/msys64/ucrt64/include/taglib/tlist.h \
- C:/msys64/ucrt64/include/taglib/tlist.tcc \
+ C:/msys64/mingw64/include/taglib/taglib_export.h \
+ C:/msys64/mingw64/include/taglib/tiostream.h \
+ C:/msys64/mingw64/include/taglib/taglib.h \
+ C:/msys64/mingw64/include/taglib/tag.h \
+ C:/msys64/mingw64/include/taglib/tstring.h \
+ C:/msys64/mingw64/include/taglib/tlist.h \
+ C:/msys64/mingw64/include/taglib/tlist.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/algorithm \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uniform_int_dist.h \
  C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
- C:/msys64/ucrt64/include/taglib/tvariant.h \
- C:/msys64/ucrt64/include/taglib/tmap.h \
+ C:/msys64/mingw64/include/taglib/tvariant.h \
+ C:/msys64/mingw64/include/taglib/tmap.h \
  C:/msys64/ucrt64/include/c++/15.2.0/utility \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_relops.h \
- C:/msys64/ucrt64/include/taglib/tmap.tcc \
- C:/msys64/ucrt64/include/taglib/tstringlist.h \
- C:/msys64/ucrt64/include/taglib/tbytevectorlist.h \
- C:/msys64/ucrt64/include/taglib/audioproperties.h \
- C:/msys64/ucrt64/include/taglib/tag.h
+ C:/msys64/mingw64/include/taglib/tmap.tcc \
+ C:/msys64/mingw64/include/taglib/tstringlist.h \
+ C:/msys64/mingw64/include/taglib/tbytevectorlist.h \
+ C:/msys64/mingw64/include/taglib/audioproperties.h \
+ C:/msys64/mingw64/include/taglib/tag.h

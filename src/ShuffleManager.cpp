@@ -9,7 +9,7 @@ ShuffleManager::ShuffleManager(){}
 
 ShuffleManager::~ShuffleManager(){}
 
-std::vector<const Song*> ShuffleManager::shuffleAll(){
+void ShuffleManager::shuffleAll(){
     std::random_device seed;    // random seed
     std::mt19937 g(seed());     // generator
 
@@ -19,7 +19,7 @@ std::vector<const Song*> ShuffleManager::shuffleAll(){
     index = 0;                  // reset
 }
 
-std::vector<const Song*> ShuffleManager::shuffle(){
+void ShuffleManager::shuffle(){
     std::random_device seed;    // random seed
     std::mt19937 g(seed());     // generator
 

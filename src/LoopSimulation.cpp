@@ -11,7 +11,7 @@ LoopSimulation::LoopSimulation(){}
 LoopSimulation::~LoopSimulation(){}
 
 void LoopSimulation::autoPlay(){
-    if (player.getCurrentSong() != nullptr && player.engine.checkFinished()){
+    if (player.getCurrentSong() != nullptr && player.engine.isFinished()){
         player.playNext();
     }
 }

@@ -13,6 +13,7 @@ private:
     ma_engine engine;
     ma_sound sound;
     bool isInitialized = false;
+    bool isSoundLoaded = false;
     
     // Atomic flag to signal the main thread that a song finished
     std::atomic<bool> songFinished; 
@@ -60,12 +61,12 @@ public:
     bool isPlaying();
     /**===================================================
      * 
-     * Description: Pause audio
+     * Description: Pause/Play audio
      *
-     * @param {paused}
+     * @param {none}
      * @returns {none}
      */
-    void setPaused(bool paused);
+    void togglePause();
     /**===================================================
      * 
      * Description: Go to timestamp
@@ -97,7 +98,7 @@ public:
      * @param {none}
      * @returns {bool} true if finished, false if not finished  
      */
-    bool checkFinished();
+    bool isFinished();
     /**===================================================
      * 
      * Description: Stop playing

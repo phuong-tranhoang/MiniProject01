@@ -35,6 +35,14 @@ public:
     ~MusicLibrary();
     /**===================================================
      * 
+     * Description: Get all songs from library
+     *
+     * @param {none}
+     * @returns {const std::vector<Song>&} reference of all the songs
+     */
+    const std::vector<Song>& getAllSongs() const;
+    /**===================================================
+     * 
      * Description: Add Song to Library and update map 
      *
      * @param {const Song&} song - Song to add to library

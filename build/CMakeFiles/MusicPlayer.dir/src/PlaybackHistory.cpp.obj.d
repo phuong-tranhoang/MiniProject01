@@ -60,6 +60,12 @@ CMakeFiles/MusicPlayer.dir/src/PlaybackHistory.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_stack.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/vector \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
  D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/Song.h \
  C:/msys64/ucrt64/include/c++/15.2.0/string \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
@@ -86,8 +92,6 @@ CMakeFiles/MusicPlayer.dir/src/PlaybackHistory.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h \
  C:/msys64/ucrt64/include/c++/15.2.0/string_view \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
  C:/msys64/ucrt64/include/c++/15.2.0/cstdlib \

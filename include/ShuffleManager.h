@@ -35,17 +35,17 @@ public:
      * Description: Shuffle all songs in shuffleQueue (includes index 0) and clear history
      *
      * @param {none}
-     * @returns {std::vector<const Song*>} a vector
+     * @returns {none}
      */
-    std::vector<const Song*> shuffleAll();
+    void shuffleAll();
     /**===================================================
      * 
      * Description: Shuffle all songs in shuffleQueue (except index 0) and clear history
      *
      * @param {none}
-     * @returns {std::vector<const Song*>} a vector
+     * @returns {none}
      */
-    std::vector<const Song*> shuffle();
+    void shuffle();
     /**===================================================
      * 
      * Description: Copy current queue into a shuffleQueue, shuffle

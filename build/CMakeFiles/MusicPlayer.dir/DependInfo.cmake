@@ -8,6 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/backends/imgui_impl_glfw.cpp" "CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_glfw.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_glfw.cpp.obj.d"
+  "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/backends/imgui_impl_opengl3.cpp" "CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_opengl3.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/include/imgui-master/backends/imgui_impl_opengl3.cpp.obj.d"
+  "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui.cpp" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui.cpp.obj.d"
+  "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui_demo.cpp" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_demo.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_demo.cpp.obj.d"
+  "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui_draw.cpp" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_draw.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_draw.cpp.obj.d"
+  "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui_tables.cpp" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_tables.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_tables.cpp.obj.d"
+  "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui_widgets.cpp" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_widgets.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/include/imgui-master/imgui_widgets.cpp.obj.d"
   "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/src/AudioEngine.cpp" "CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj.d"
   "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/src/InputHandler.cpp" "CMakeFiles/MusicPlayer.dir/src/InputHandler.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/src/InputHandler.cpp.obj.d"
   "D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/src/LoopSimulation.cpp" "CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj" "gcc" "CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj.d"

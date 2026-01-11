@@ -16,14 +16,34 @@ MusicPlayer::MusicPlayer(){
 MusicPlayer::~MusicPlayer(){}
 
 void MusicPlayer::loadLibrary(const std::string& path){
+    if (!fs::exists(path)) {
+        std::cerr << "Error: Path does not exist -> " << path << std::endl;
+        return; 
+    }
+
+    int count = 0;
+
     for (const auto& entry : fs::directory_iterator(path)) {
         if (entry.path().extension() == ".mp3" || entry.path().extension() == ".wav") {
             Song newSong;
             newSong.filePath = entry.path().string(); // Add filepath to Song struct!
+
+            // Default metadata
+            newSong.title = entry.path().stem().string();
+            newSong.artist = "Unknown Artist";
+            newSong.album = "Unknown Album";
+
             loadMetadata(newSong.filePath, newSong);
+            
             library.addSong(newSong);
+            count++;
         }
     }
+    std::cout << "Loaded: " << count << " songs from " << path << std::endl;
+}
+
+const MusicLibrary& MusicPlayer::getLibrary() const {
+    return library;
 }
 
 void MusicPlayer::loadMetadata(const std::string& filePath, Song& newSong) {
@@ -33,19 +53,22 @@ void MusicPlayer::loadMetadata(const std::string& filePath, Song& newSong) {
         TagLib::Tag *tag = f.tag();
         newSong.title = tag->title().to8Bit(true);   // Convert String to std::string
         newSong.artist = tag->artist().to8Bit(true);
+        newSong.album = tag->album().to8Bit(true);
         newSong.duration = f.audioProperties()->lengthInSeconds();
-    } else {
-        newSong.title = "Unknown";                  // Fallback
     }
 }
 
 size_t MusicPlayer::getLibrarySize(){
-    library.getSize();
+    return library.getSize();
 }
 
 const Song* MusicPlayer::getCurrentSong(){
     return current;
 }
+
+const PlaybackQueue& MusicPlayer::getQueueManager() const { return queue; }
+
+const PlaybackHistory& MusicPlayer::getHistoryManager() const { return stack; }
 
 void MusicPlayer::addSongToQueue(const Song* song){
     queue.addSong(song);
@@ -115,6 +138,10 @@ void MusicPlayer::enableShuffle(){
     shuffleMgr.enableShuffle(queue.getQueueList());
     std::cout << "Shuffle: ON" << std::endl;
 }
+
+bool MusicPlayer::isShuffleEnabled() const{
+    return isShuffleEn;
+};
 
 void MusicPlayer::disableShuffle(){
     isShuffleEn = false;

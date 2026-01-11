@@ -24,6 +24,17 @@ const Song* PlaybackHistory::getForwardSong(){
     return next;
 }
 
+std::vector<const Song*> PlaybackHistory::getHistoryList() const {
+    std::vector<const Song*> list;
+    // Copy stack to a vector (Standard stack hack: copy it, then pop all)
+    std::stack<const Song*> temp = history; 
+    while(!temp.empty()){
+        list.push_back(temp.top());
+        temp.pop();
+    }
+    return list;
+}
+
 void PlaybackHistory::addSongToHistory(const Song* song){
     history.push(song);
 }

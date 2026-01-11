@@ -35,7 +35,7 @@ public:
      * @param {none}
      * @returns {std::list<const Song*>} - queue list   
      */
-    std::list<const Song*> getQueueList();
+    std::list<const Song*> getQueueList() const ;
     /**===================================================
      * 
      * Description: Add song to playback queue
@@ -44,7 +44,6 @@ public:
      * @returns {none}  
      */
     void addSong(const Song*);
-
     /**===================================================
      * 
      * Description: Remove song (pointer) from queue using ID

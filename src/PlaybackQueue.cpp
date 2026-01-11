@@ -8,7 +8,7 @@ PlaybackQueue::PlaybackQueue() {}
 
 PlaybackQueue::~PlaybackQueue() {}
 
-std::list<const Song*> PlaybackQueue::getQueueList(){
+std::list<const Song*> PlaybackQueue::getQueueList() const {
     return queue;
 }
 

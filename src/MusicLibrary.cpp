@@ -1,6 +1,7 @@
 // MusicLibrary.cpp
 
 #include "../include/MusicLibrary.h"
+#include <iostream>
 
 MusicLibrary::MusicLibrary() {
     songs.reserve(1000);
@@ -8,26 +9,29 @@ MusicLibrary::MusicLibrary() {
 
 MusicLibrary::~MusicLibrary() {}
 
-bool MusicLibrary::addSong(const Song& song) {
-    const Song* songPtr = &songs.back();
+    
+const std::vector<Song>& MusicLibrary::getAllSongs() const {
+    return songs;
+}
 
-    if (songs.size()>=songs.capacity()){
-        songs.push_back(song);
-        // ReInit entire map if vector is allocated (>1000 songs)
-        initIDMap();
-        initTitleMap();
-        initArtistMap();
-        return true;       // return false if reallocated
+bool MusicLibrary::addSong(const Song& song) {
+    // Check capacity
+    bool reallocated = false;
+    if (songs.size() >= songs.capacity()) {
+        reallocated = true; 
+        std::cout << "Vector Reallocation" << std::endl;
     }
     
     songs.push_back(song);
+
+    const Song* songPtr = &songs.back();
 
     // Update maps
     
     songIndexByID[song.id] = songPtr;
     songIndexByTitle[song.title] = songPtr;
     artistIndex[song.artist].push_back(songPtr);
-    return false;            // return true if not reallocated
+    return reallocated;            //
 }
 
 std::vector<Song>::const_iterator MusicLibrary::begin() const {

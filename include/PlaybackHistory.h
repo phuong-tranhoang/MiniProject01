@@ -5,6 +5,7 @@
 #define HISTORY_H
 
 #include <stack>
+#include <vector>
 #include "Song.h"
 
 class PlaybackHistory {
@@ -45,6 +46,14 @@ public:
      * @returns {const Song*} - Pointer to forward song in stack
      */
     const Song* getForwardSong();
+    /**===================================================
+     * 
+     * Description: Get history list
+     *
+     * @param {none}
+     * @returns {std::vector<const Song*} - list in vector
+     */
+    std::vector<const Song*> getHistoryList() const;
     /**===================================================
      * 
      * Description: Add song to history stack
