@@ -1,0 +1,3 @@
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/build/CMakeFiles/MusicPlayer.dir
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/build/CMakeFiles/edit_cache.dir
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/build/CMakeFiles/rebuild_cache.dir
