@@ -2,7 +2,18 @@ CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj: \
  D:\PHUONG\FPT\CPP\MiniProject\MiniProject01\src\LoopSimulation.cpp \
  D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/LoopSimulation.h \
  D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/MusicPlayer.h \
- D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/Song.h \
+ D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/AudioEngine.h \
+ D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/miniaudio-master/miniaudio.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ C:/msys64/ucrt64/include/stddef.h C:/msys64/ucrt64/include/crtdefs.h \
+ C:/msys64/ucrt64/include/corecrt.h C:/msys64/ucrt64/include/_mingw.h \
+ C:/msys64/ucrt64/include/_mingw_mac.h \
+ C:/msys64/ucrt64/include/_mingw_secapi.h \
+ C:/msys64/ucrt64/include/vadefs.h \
+ C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+ C:/msys64/ucrt64/include/stdarg.h \
+ C:/msys64/ucrt64/include/_mingw_stdarg.h \
  C:/msys64/ucrt64/include/c++/15.2.0/string \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -14,11 +25,7 @@ CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h \
  C:/msys64/ucrt64/include/c++/15.2.0/cwchar \
- C:/msys64/ucrt64/include/wchar.h C:/msys64/ucrt64/include/corecrt.h \
- C:/msys64/ucrt64/include/_mingw.h C:/msys64/ucrt64/include/_mingw_mac.h \
- C:/msys64/ucrt64/include/_mingw_secapi.h \
- C:/msys64/ucrt64/include/vadefs.h \
- C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+ C:/msys64/ucrt64/include/wchar.h \
  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
  C:/msys64/ucrt64/include/corecrt_wstdlib.h \
  C:/msys64/ucrt64/include/corecrt_wctype.h \
@@ -40,8 +47,7 @@ CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
  C:/msys64/ucrt64/include/c++/15.2.0/clocale \
- C:/msys64/ucrt64/include/locale.h C:/msys64/ucrt64/include/crtdefs.h \
- C:/msys64/ucrt64/include/stdio.h \
+ C:/msys64/ucrt64/include/locale.h C:/msys64/ucrt64/include/stdio.h \
  C:/msys64/ucrt64/include/sec_api/stdio_s.h \
  C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
  C:/msys64/ucrt64/include/c++/15.2.0/cctype \
@@ -95,8 +101,6 @@ CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
  C:/msys64/ucrt64/include/c++/15.2.0/cstddef \
- C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
- C:/msys64/ucrt64/include/stddef.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
@@ -107,23 +111,30 @@ CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj: \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
  C:/msys64/ucrt64/include/stdint.h \
  D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/MusicLibrary.h \
+ D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/Song.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/map \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tree.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/node_handle.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_map.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/erase_if.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/unordered_map \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable_policy.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
  C:/msys64/ucrt64/include/c++/15.2.0/vector \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
- C:/msys64/ucrt64/include/c++/15.2.0/unordered_map \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable_policy.h \
- C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/node_handle.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/erase_if.h \
- C:/msys64/ucrt64/include/c++/15.2.0/map \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tree.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_map.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h \
+ D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/PlaybackHistory.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/stack \
+ C:/msys64/ucrt64/include/c++/15.2.0/deque \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_deque.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/deque.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_stack.h \
  D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/PlaybackQueue.h \
  C:/msys64/ucrt64/include/c++/15.2.0/list \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_list.h \
@@ -132,17 +143,6 @@ CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj: \
  D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/ShuffleManager.h \
  C:/msys64/ucrt64/include/c++/15.2.0/unordered_set \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_set.h \
- D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/PlaybackHistory.h \
- C:/msys64/ucrt64/include/c++/15.2.0/stack \
- C:/msys64/ucrt64/include/c++/15.2.0/deque \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_deque.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/deque.tcc \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_stack.h \
- D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/AudioEngine.h \
- D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/miniaudio-master/miniaudio.h \
- C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
- C:/msys64/ucrt64/include/stdarg.h \
- C:/msys64/ucrt64/include/_mingw_stdarg.h \
  C:/msys64/ucrt64/include/c++/15.2.0/filesystem \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_fwd.h \
  C:/msys64/ucrt64/include/c++/15.2.0/system_error \

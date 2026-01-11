@@ -320,54 +320,6 @@ src/AudioEngine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.s
 .PHONY : src/AudioEngine.cpp.s
 
-src/InputHandler.obj: src/InputHandler.cpp.obj
-.PHONY : src/InputHandler.obj
-
-# target to build an object file
-src/InputHandler.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/InputHandler.cpp.obj
-.PHONY : src/InputHandler.cpp.obj
-
-src/InputHandler.i: src/InputHandler.cpp.i
-.PHONY : src/InputHandler.i
-
-# target to preprocess a source file
-src/InputHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/InputHandler.cpp.i
-.PHONY : src/InputHandler.cpp.i
-
-src/InputHandler.s: src/InputHandler.cpp.s
-.PHONY : src/InputHandler.s
-
-# target to generate assembly for a file
-src/InputHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/InputHandler.cpp.s
-.PHONY : src/InputHandler.cpp.s
-
-src/LoopSimulation.obj: src/LoopSimulation.cpp.obj
-.PHONY : src/LoopSimulation.obj
-
-# target to build an object file
-src/LoopSimulation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.obj
-.PHONY : src/LoopSimulation.cpp.obj
-
-src/LoopSimulation.i: src/LoopSimulation.cpp.i
-.PHONY : src/LoopSimulation.i
-
-# target to preprocess a source file
-src/LoopSimulation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.i
-.PHONY : src/LoopSimulation.cpp.i
-
-src/LoopSimulation.s: src/LoopSimulation.cpp.s
-.PHONY : src/LoopSimulation.s
-
-# target to generate assembly for a file
-src/LoopSimulation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/LoopSimulation.cpp.s
-.PHONY : src/LoopSimulation.cpp.s
-
 src/MusicLibrary.obj: src/MusicLibrary.cpp.obj
 .PHONY : src/MusicLibrary.obj
 
@@ -512,6 +464,54 @@ src/Song.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/Song.cpp.s
 .PHONY : src/Song.cpp.s
 
+src/Theme.obj: src/Theme.cpp.obj
+.PHONY : src/Theme.obj
+
+# target to build an object file
+src/Theme.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/Theme.cpp.obj
+.PHONY : src/Theme.cpp.obj
+
+src/Theme.i: src/Theme.cpp.i
+.PHONY : src/Theme.i
+
+# target to preprocess a source file
+src/Theme.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/Theme.cpp.i
+.PHONY : src/Theme.cpp.i
+
+src/Theme.s: src/Theme.cpp.s
+.PHONY : src/Theme.s
+
+# target to generate assembly for a file
+src/Theme.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/Theme.cpp.s
+.PHONY : src/Theme.cpp.s
+
+src/UIComponents.obj: src/UIComponents.cpp.obj
+.PHONY : src/UIComponents.obj
+
+# target to build an object file
+src/UIComponents.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/UIComponents.cpp.obj
+.PHONY : src/UIComponents.cpp.obj
+
+src/UIComponents.i: src/UIComponents.cpp.i
+.PHONY : src/UIComponents.i
+
+# target to preprocess a source file
+src/UIComponents.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/UIComponents.cpp.i
+.PHONY : src/UIComponents.cpp.i
+
+src/UIComponents.s: src/UIComponents.cpp.s
+.PHONY : src/UIComponents.s
+
+# target to generate assembly for a file
+src/UIComponents.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MusicPlayer.dir\build.make CMakeFiles/MusicPlayer.dir/src/UIComponents.cpp.s
+.PHONY : src/UIComponents.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -569,12 +569,6 @@ help:
 	@echo ... src/AudioEngine.obj
 	@echo ... src/AudioEngine.i
 	@echo ... src/AudioEngine.s
-	@echo ... src/InputHandler.obj
-	@echo ... src/InputHandler.i
-	@echo ... src/InputHandler.s
-	@echo ... src/LoopSimulation.obj
-	@echo ... src/LoopSimulation.i
-	@echo ... src/LoopSimulation.s
 	@echo ... src/MusicLibrary.obj
 	@echo ... src/MusicLibrary.i
 	@echo ... src/MusicLibrary.s
@@ -593,6 +587,12 @@ help:
 	@echo ... src/Song.obj
 	@echo ... src/Song.i
 	@echo ... src/Song.s
+	@echo ... src/Theme.obj
+	@echo ... src/Theme.i
+	@echo ... src/Theme.s
+	@echo ... src/UIComponents.obj
+	@echo ... src/UIComponents.i
+	@echo ... src/UIComponents.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
