@@ -19,13 +19,21 @@ void MusicPlayer::loadLibrary(const std::string &path) {
     return;
   }
 
+  // Check if folder already loaded
+  std::string normalizedPath = fs::canonical(path).string();
+  if (loadedFolders.count(normalizedPath) > 0) {
+    std::cout << "Folder already loaded: " << path << std::endl;
+    return;
+  }
+  loadedFolders.insert(normalizedPath);
+
   int count = 0;
 
   for (const auto &entry : fs::directory_iterator(path)) {
     if (entry.path().extension() == ".mp3" ||
         entry.path().extension() == ".wav") {
       Song newSong;
-      newSong.filePath = entry.path().string(); // Add filepath to Song struct!
+      newSong.filePath = entry.path().string();
 
       // Default metadata
       newSong.title = entry.path().stem().string();
@@ -44,7 +52,9 @@ void MusicPlayer::loadLibrary(const std::string &path) {
 const MusicLibrary &MusicPlayer::getLibrary() const { return library; }
 
 void MusicPlayer::loadMetadata(const std::string &filePath, Song &newSong) {
-  TagLib::FileRef f(filePath.c_str());
+  // Use fs::u8path for proper UTF-8 to wchar_t conversion on Windows
+  fs::path fsPath = fs::u8path(filePath);
+  TagLib::FileRef f(fsPath.wstring().c_str());
 
   if (!f.isNull() && f.tag()) {
     TagLib::Tag *tag = f.tag();
@@ -68,6 +78,10 @@ void MusicPlayer::addSongToQueue(const Song *song) {
   if (isShuffleEn == true) {
     shuffleMgr.addSong(song);
   }
+}
+
+void MusicPlayer::removeSongFromQueue(const Song *song) {
+  queue.removeSong(song);
 }
 
 size_t MusicPlayer::getQueueSize() { return queue.getQueueSize(); }
@@ -107,6 +121,13 @@ void MusicPlayer::playNext() {
     playSong();
   } else {
     std::cout << "No Songs in Queue" << std::endl;
+    if (current != nullptr) {
+      ma_sound_stop(&engine.sound);
+      ma_sound_uninit(&engine.sound);
+      engine.isSoundLoaded = false;
+      engine.songFinished = true;
+    }
+    current = nullptr;
   }
 }
 
@@ -116,7 +137,10 @@ void MusicPlayer::playPrevious() {
     std::cout << "No previous songs" << std::endl;
     return; // Do nothing
   }
-  stack.addSongToForward(current); // Put current song in forward
+  // Only add current to forward if it's not null
+  if (current != nullptr) {
+    stack.addSongToForward(current);
+  }
   current = prev;
   playSong();
 }
@@ -162,10 +186,18 @@ void MusicPlayer::selectAndAddSong(const std::string &title) {
   addSongToQueue(library.findSongByTitle(title));
 }
 
-void MusicPlayer::addAlbumToQueue(const std::string &albumName) {
-  size_t count = queue.addAlbumToQueue(albumName, library);
-  std::cout << "Added " << count << " songs from album: " << albumName
-            << std::endl;
+size_t MusicPlayer::addAlbumToQueue(const std::string &albumName) {
+  int count = 0;
+  for (const auto &song : library) {
+    if (song.album == albumName) {
+      const Song *songPtr = library.findSongByID(song.id);
+      if (songPtr) {
+        this->addSongToQueue(songPtr);
+        count++;
+      }
+    }
+  }
+  return count;
 }
 
 void MusicPlayer::clearQueue() {
@@ -242,8 +274,9 @@ void MusicPlayer::clearLibrary() {
   stack.clearForward();
   smartPlaylist.clearQueue();
 
-  // Clear library
+  // Clear library and loaded folders
   library.clear();
+  loadedFolders.clear();
   isShuffleEn = false;
 
   std::cout << "Library unloaded" << std::endl;

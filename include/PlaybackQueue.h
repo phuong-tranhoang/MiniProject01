@@ -43,15 +43,15 @@ public:
      * @param {const Song*} song - pointer of song (in library) to add to queue
      * @returns {none}  
      */
-    void addSong(const Song*);
+    void addSong(const Song* song);
     /**===================================================
      * 
      * Description: Remove song (pointer) from queue using ID
      *
-     * @param {int} songID - ID of song to remove
+     * @param {const Song*} targetSong - song to remove
      * @returns {none}  
      */
-    void removeSong(int songID);
+    void removeSong(const Song* targetSong);
     /**===================================================
      * 
      * Description: Clear current queue
@@ -77,7 +77,7 @@ public:
      * @returns {const Song*} - pointer to current song in queue
      * @note return nullptr if queue empty
      */
-    const Song* getCurrentSong() const; 
+    //const Song* getCurrentSong() const; 
     /**===================================================
      * 
      * Description: Get the next song in queue and remove the current song

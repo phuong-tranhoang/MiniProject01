@@ -10,15 +10,13 @@
 
 class AudioEngine {
 private:
-    ma_engine engine;
-    ma_sound sound;
-    bool isInitialized = false;
-    bool isSoundLoaded = false;
-    
-    // Atomic flag to signal the main thread that a song finished
-    std::atomic<bool> songFinished; 
 
 public:
+    bool isInitialized = false;
+    bool isSoundLoaded = false;
+    ma_engine engine;
+    ma_sound sound;
+    std::atomic<bool> songFinished; 
     /**===================================================
      * 
      * Description: Construct Class with songFinished = false

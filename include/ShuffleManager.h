@@ -8,12 +8,11 @@
 #include "Song.h"
 #include <unordered_set>
 
-
 class ShuffleManager {
 private:
   std::vector<const Song *> shuffleQueue;
   std::unordered_set<const Song *> shuffleHistory;
-  int index = 0;
+  int index = -1;
 
 public:
   /**===================================================
@@ -43,18 +42,9 @@ public:
   void shuffleAll();
   /**===================================================
    *
-   * Description: Shuffle all songs in shuffleQueue (except index 0) and clear
-   * history
+   * Description: Copy queue into shuffleQueue and shuffle all
    *
-   * @param {none}
-   * @returns {none}
-   */
-  void shuffle();
-  /**===================================================
-   *
-   * Description: Copy current queue into a shuffleQueue, shuffle
-   *
-   * @param {std::list<const Song*>} - queue: current PlaybackQueue
+   * @param {std::list<const Song*>} queue - upcoming PlaybackQueue
    * @returns {none}
    */
   void enableShuffle(std::list<const Song *> queue);
@@ -65,7 +55,7 @@ public:
    * @param {none}
    * @returns {const Song*} - Pointer to current song
    */
-  const Song *getCurrentSong();
+  //const Song *getCurrentSong();
   /**===================================================
    *
    * Description: Get the next song in shuffle_list
@@ -90,6 +80,14 @@ public:
    * @returns {none}
    */
   void addSong(const Song *song);
+    /**===================================================
+   *
+   * Description: Add album to the shuffle queue
+   *
+   * @param {const Song*} album - album name
+   * @returns {none}
+   */
+  size_t addAlbumToQueue(const std::string&albumName, const MusicLibrary &library);
   /**===================================================
    *
    * Description: Get the shuffled queue for visual display

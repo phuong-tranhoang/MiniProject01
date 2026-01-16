@@ -1,8 +1,9 @@
 // PlaybackHistory.cpp
-
 #include "../include/PlaybackHistory.h"
 
-PlaybackHistory::PlaybackHistory(){}
+PlaybackHistory::PlaybackHistory(){
+    forward.reserve(36);
+}
 
 PlaybackHistory::~PlaybackHistory(){}
 
@@ -19,8 +20,8 @@ const Song* PlaybackHistory::getForwardSong(){
     if (forward.empty()){
         return nullptr;
     }
-    const Song* next = forward.top();
-    forward.pop();
+    const Song* next = forward.back();
+    forward.pop_back();
     return next;
 }
 
@@ -35,12 +36,16 @@ std::vector<const Song*> PlaybackHistory::getHistoryList() const {
     return list;
 }
 
+std::vector<const Song*> PlaybackHistory::getForwardList() const {
+    return forward;
+}
+
 void PlaybackHistory::addSongToHistory(const Song* song){
     history.push(song);
 }
 
 void PlaybackHistory::addSongToForward(const Song* song){
-    forward.push(song);
+    forward.push_back(song);
 }
 
 void PlaybackHistory::clearHistory(){
@@ -51,7 +56,7 @@ void PlaybackHistory::clearHistory(){
 
 void PlaybackHistory::clearForward(){
     while (!forward.empty()){
-        forward.pop();
+        forward.pop_back();
     }
 }
 

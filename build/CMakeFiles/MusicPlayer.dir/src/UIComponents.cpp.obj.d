@@ -214,6 +214,7 @@ CMakeFiles/MusicPlayer.dir/src/UIComponents.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/iostream \
  C:/msys64/ucrt64/include/c++/15.2.0/set \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_set.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multiset.h

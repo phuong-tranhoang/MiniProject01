@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <cctype>
 #include <iomanip>
+#include <iostream>
 #include <map>
 #include <set>
 #include <sstream>
@@ -21,6 +22,7 @@ const float TOAST_DURATION = 2.0f;
 void showToast(const std::string &message) {
   toastMessage = message;
   toastTimer = TOAST_DURATION;
+  std::cout << "Toast: " << message << std::endl;
 }
 
 // --- HELPER: Time Formatter (MM:SS) ---
@@ -42,19 +44,28 @@ bool containsString(const std::string &haystack, const std::string &needle) {
 }
 
 // --- RENDER SONG ITEM ---
-void RenderSongItem(const Song *song, bool spacious) {
+void RenderSongItem(const Song *song, bool spacious, bool inQueue) {
   ImGui::PushID(song);
 
   if (spacious) {
     ImGui::BeginGroup();
-    ImGui::TextColored(ImVec4(1, 1, 1, 1), "%s", song->title.c_str());
+    if (song == player.getCurrentSong()) {
+      ImGui::TextColored(ImVec4(0.6f, 0.4f, 0.8f, 1), "%s",
+                         song->title.c_str());
+    } else {
+      ImGui::TextColored(ImVec4(1, 1, 1, 1), "%s", song->title.c_str());
+    }
     ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "%s - %s",
                        song->artist.c_str(), song->album.c_str());
     ImGui::EndGroup();
   } else {
-    ImGui::Text("%s - %s", song->title.c_str(), song->artist.c_str());
+    if (song == player.getCurrentSong()) {
+      ImGui::TextColored(ImVec4(0.6f, 0.4f, 0.8f, 1), "%s - %s",
+                         song->title.c_str(), song->artist.c_str());
+    } else {
+      ImGui::Text("%s - %s", song->title.c_str(), song->artist.c_str());
+    }
   }
-
   if (ImGui::IsItemHovered()) {
     ImGui::SetTooltip("Double-click to play");
   }
@@ -76,6 +87,11 @@ void RenderSongItem(const Song *song, bool spacious) {
       strcpy(searchBuf, song->artist.c_str());
       currentTab = TAB_SEARCH;
     }
+    if (inQueue) {
+      if (ImGui::MenuItem("Remove Song")) {
+        player.removeSongFromQueue(song);
+      }
+    }
     ImGui::EndPopup();
   }
 
@@ -86,22 +102,130 @@ void RenderSongItem(const Song *song, bool spacious) {
 
 // --- RENDER ALBUMS TAB ---
 void RenderAlbumsTab() {
-  std::map<std::string, std::vector<const Song *>> albums;
-  for (const auto &song : player.getLibrary().getAllSongs()) {
-    albums[song.album].push_back(&song);
-  }
-
-  for (auto const &[name, songs] : albums) {
-    if (ImGui::TreeNode(name.c_str())) {
+  const auto &albums = player.getLibrary().getAlbumIndex();
+  ImGui::Text("Albums (%zu)", albums.size());
+  ImGui::Separator();
+  for (const auto &[albumName, songs] : albums) {
+    ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.55f, 0.30f, 0.65f, 0.6f));
+    bool open = ImGui::CollapsingHeader(albumName.c_str());
+    ImGui::PopStyleColor();
+    if (open) {
+      ImGui::Indent(20.0f);
+      ImGui::TextDisabled("%zu songs", songs.size());
       ImGui::SameLine();
-      if (ImGui::SmallButton("Play Album")) {
-        player.addAlbumToQueue(name);
+      ImGui::PushID(albumName.c_str());
+      if (ImGui::SmallButton("Add All to Queue")) {
+        auto size = player.addAlbumToQueue(albumName);
+        showToast("Added " + std::to_string(size) + " songs from " +
+                  albumName);
       }
+      ImGui::PopID();
+      ImGui::Spacing();
+      ImGui::Separator();
       for (const auto *s : songs) {
         RenderSongItem(s, false);
+        ImGui::Separator();
       }
-      ImGui::TreePop();
+      ImGui::Unindent(20.0f);
     }
+  }
+}
+// --- RENDER ARTIST TAB ---
+void RenderArtistTab() {
+  const auto &artists = player.getLibrary().getArtistIndex();
+  ImGui::Text("Artists (%zu)", artists.size());
+  ImGui::Separator();
+  for (const auto &[artistName, songs] : artists) {
+    ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.55f, 0.30f, 0.65f, 0.6f));
+    bool open = ImGui::CollapsingHeader(artistName.c_str());
+    ImGui::PopStyleColor();
+    if (open) {
+      ImGui::Indent(20.0f);
+      ImGui::TextDisabled("%zu songs", songs.size());
+      ImGui::SameLine();
+      ImGui::PushID(artistName.c_str());
+      if (ImGui::SmallButton("Add All to Queue")) {
+        player.addArtistToQueue(artistName);
+        showToast("Added " + std::to_string(songs.size()) + " songs from " +
+                  artistName);
+      }
+      ImGui::PopID();
+      ImGui::Spacing();
+      ImGui::Separator();
+      for (const auto *s : songs) {
+        RenderSongItem(s, false);
+        ImGui::Separator();
+      }
+      ImGui::Unindent(20.0f);
+    }
+  }
+}
+// --- RENDER SEARCH TAB ---
+void RenderSearchTab() {
+  ImGui::InputTextWithHint(
+      "##SearchBox", "Search Title, Artist, Album, or ID...", searchBuf, 128);
+  ImGui::Separator();
+  std::string query(searchBuf);
+  if (query.length() > 0) {
+    bool isNumeric = true;
+    for (char c : query) {
+      if (!std::isdigit(c)) {
+        isNumeric = false;
+        break;
+      }
+    }
+    if (isNumeric) {
+      int searchId = std::stoi(query);
+      const Song *found = player.getLibrary().findSongByID(searchId);
+      if (found) {
+        ImGui::TextColored(ImVec4(0.6f, 0.8f, 0.6f, 1.0f), "Found by ID:");
+        RenderSongItem(found);
+      }
+    }
+    std::list<const Song *> matchedSongs;
+    int matchedCount = 0;
+    ;
+    ImGui::TextDisabled("Songs:");
+    for (const auto &song : player.getLibrary().getAllSongs()) {
+      if (containsString(song.title, query) ||
+          containsString(song.artist, query) ||
+          containsString(song.album, query)) {
+        matchedSongs.push_back(&song);
+        matchedCount++;
+      }
+    }
+    ImGui::SameLine();
+    ImGui::Text("Found %zu related song(s)", matchedCount);
+    ImGui::Separator();
+    if (ImGui::SmallButton("Add All to Queue")) {
+      for (auto &songs : matchedSongs) {
+        player.addSongToQueue(songs);
+      }
+    }
+    for (auto &songs : matchedSongs) {
+      RenderSongItem(songs);
+    }
+    ImGui::Separator();
+    ImGui::TextDisabled("Albums:");
+    std::set<std::string> matchedAlbums;
+    for (const auto &song : player.getLibrary().getAllSongs()) {
+      if (containsString(song.album, query)) {
+        matchedAlbums.insert(song.album);
+      }
+    }
+    for (const auto &albumName : matchedAlbums) {
+      ImGui::PushID(albumName.c_str());
+      ImGui::Text("%s", albumName.c_str());
+      ImGui::SameLine();
+      if (ImGui::SmallButton("Add Album to Queue")) {
+        auto size = player.addAlbumToQueue(albumName);
+        showToast(
+            "Added album: " + albumName + " with " + std::to_string(size) + " songs");
+      }
+      ImGui::PopID();
+    }
+  } else {
+    ImGui::TextDisabled("Type to search...");
   }
 }
 
@@ -109,12 +233,13 @@ void RenderAlbumsTab() {
 void RenderSmartPlaylistButton(const Song *current) {
   static int playlistSize = 20;
 
-  if (ImGui::Button("Generate Smart Playlist")) {
+  if (ImGui::Button("Smart Playlist", ImVec2(110.0f, 0))) {
     ImGui::OpenPopup("SmartPlaylistPopup");
   }
 
   if (ImGui::BeginPopup("SmartPlaylistPopup")) {
-    ImGui::Text("Generate based on: %s", current->artist.c_str());
+    ImGui::Text("Generate based on album: %s and artist: %s",
+                current->album.c_str(), current->artist.c_str());
     ImGui::Separator();
     ImGui::SliderInt("Songs", &playlistSize, 5, 100);
     ImGui::Spacing();
@@ -138,12 +263,14 @@ void RenderToast() {
     ImGui::SetNextWindowPos(ImVec2(ImGui::GetIO().DisplaySize.x / 2, 50),
                             ImGuiCond_Always, ImVec2(0.5f, 0.0f));
     ImGui::SetNextWindowBgAlpha(0.8f * alpha);
-    ImGui::Begin("##Toast", nullptr,
-                 ImGuiWindowFlags_NoDecoration |
-                     ImGuiWindowFlags_AlwaysAutoResize |
-                     ImGuiWindowFlags_NoSavedSettings |
-                     ImGuiWindowFlags_NoFocusOnAppearing |
-                     ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoMove);
+    ImGui::SetNextWindowFocus(); // Bring to front
+    ImGui::Begin(
+        "##Toast", nullptr,
+        ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize |
+            ImGuiWindowFlags_NoSavedSettings |
+            ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav |
+            ImGuiWindowFlags_NoMove |
+            ImGuiWindowFlags_NoInputs); // No inputs prevents focus issues
     ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, alpha), "%s",
                        toastMessage.c_str());
     ImGui::End();
@@ -203,124 +330,112 @@ void RenderMainUI(char *pathBuffer) {
   ImGui::BeginChild("MainView", ImVec2(0, -140), true);
 
   if (currentTab == TAB_LIBRARY) {
+    static bool sortAZ = false;
     ImGui::Text("All Songs (%zu)", player.getLibrary().getSize());
+    ImGui::SameLine();
+    if (ImGui::SmallButton(sortAZ ? "SORT: A-Z" : "SORT: OFF")) {
+      sortAZ = !sortAZ;
+    }
     ImGui::Separator();
     ImGuiListClipper clipper;
-    const auto &all = player.getLibrary().getAllSongs();
-    clipper.Begin(all.size());
-    while (clipper.Step()) {
-      for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++) {
-        RenderSongItem(&all[i]);
+    if (sortAZ) {
+      auto sorted = player.getLibrary().getSortedSongs();
+      clipper.Begin(sorted.size());
+      while (clipper.Step()) {
+        ImGui::Indent(20.0f);
+        for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++) {
+          ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "%zu", i + 1);
+          ImGui::SameLine();
+          ImGui::SetCursorPosX(55.0f);
+          ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "|");
+          ImGui::SameLine();
+          RenderSongItem(sorted[i]);
+        }
+        ImGui::Unindent();
+      }
+    } else {
+      const auto &all = player.getLibrary().getAllSongs();
+      clipper.Begin(all.size());
+      while (clipper.Step()) {
+        ImGui::Indent(20.0f);
+        for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++) {
+          ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "%zu", i + 1);
+          ImGui::SameLine();
+          ImGui::SetCursorPosX(55.0f);
+          ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "|");
+          ImGui::SameLine();
+          RenderSongItem(&all[i]);
+        }
+        ImGui::Unindent();
       }
     }
   } else if (currentTab == TAB_ALBUMS) {
     RenderAlbumsTab();
   } else if (currentTab == TAB_ARTISTS) {
-    std::map<std::string, std::vector<const Song *>> artists;
-    for (const auto &song : player.getLibrary().getAllSongs()) {
-      artists[song.artist].push_back(&song);
-    }
-    ImGui::Text("Artists (%zu)", artists.size());
-    ImGui::Separator();
-    for (const auto &[artistName, songs] : artists) {
-      ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.55f, 0.30f, 0.65f, 0.6f));
-      bool open = ImGui::CollapsingHeader(artistName.c_str());
-      ImGui::PopStyleColor();
-      if (open) {
-        ImGui::Indent(20.0f);
-        ImGui::TextDisabled("%zu songs", songs.size());
-        ImGui::SameLine();
-        ImGui::PushID(artistName.c_str());
-        if (ImGui::SmallButton("Add All to Queue")) {
-          player.addArtistToQueue(artistName);
-          showToast("Added " + std::to_string(songs.size()) + " songs");
-        }
-        ImGui::PopID();
-        ImGui::Spacing();
-        for (const auto *s : songs) {
-          RenderSongItem(s, false);
-        }
-        ImGui::Unindent(20.0f);
-      }
-    }
+    RenderArtistTab();
   } else if (currentTab == TAB_SEARCH) {
-    ImGui::InputTextWithHint(
-        "##SearchBox", "Search Title, Artist, Album, or ID...", searchBuf, 128);
-    ImGui::Separator();
-    std::string query(searchBuf);
-    if (query.length() > 0) {
-      bool isNumeric = true;
-      for (char c : query) {
-        if (!std::isdigit(c)) {
-          isNumeric = false;
-          break;
-        }
-      }
-      if (isNumeric) {
-        int searchId = std::stoi(query);
-        const Song *found = player.getLibrary().findSongByID(searchId);
-        if (found) {
-          ImGui::TextColored(ImVec4(0.6f, 0.8f, 0.6f, 1.0f), "Found by ID:");
-          RenderSongItem(found);
-        }
-      }
-      ImGui::TextDisabled("Songs:");
-      for (const auto &song : player.getLibrary().getAllSongs()) {
-        if (containsString(song.title, query) ||
-            containsString(song.artist, query) ||
-            containsString(song.album, query)) {
-          RenderSongItem(&song);
-        }
-      }
-      ImGui::Separator();
-      ImGui::TextDisabled("Albums:");
-      std::set<std::string> matchedAlbums;
-      for (const auto &song : player.getLibrary().getAllSongs()) {
-        if (containsString(song.album, query)) {
-          matchedAlbums.insert(song.album);
-        }
-      }
-      for (const auto &albumName : matchedAlbums) {
-        ImGui::PushID(albumName.c_str());
-        ImGui::Text("%s", albumName.c_str());
-        ImGui::SameLine();
-        if (ImGui::SmallButton("Add Album to Queue")) {
-          player.addAlbumToQueue(albumName);
-          showToast("Added album: " + albumName);
-        }
-        ImGui::PopID();
-      }
-    } else {
-      ImGui::TextDisabled("Type to search...");
-    }
+    RenderSearchTab();
   } else if (currentTab == TAB_QUEUE) {
+    const Song *current = player.getCurrentSong();
     ImGui::Text("Upcoming Queue");
+    if (current) {
+      std::string nowPlaying = current->title + " - " + current->artist;
+      ImGui::SameLine();
+      ImGui::TextColored(ImVec4(0.6f, 0.4f, 0.8f, 1), "   (Now Playing: %s)",
+                         nowPlaying.c_str());
+    }
     if (ImGui::SmallButton("Clear Queue")) {
       player.clearQueue();
       showToast("Queue cleared");
     }
     ImGui::Separator();
     auto forwardSize = player.getHistoryManager().getForwardSize();
+    auto forwardList = player.getHistoryManager().getForwardList();
     if (forwardSize > 0) {
       ImGui::TextColored(ImVec4(0.7f, 0.7f, 0.4f, 1.0f),
                          "Next up (from history):");
-      ImGui::TextDisabled("  %zu songs in forward queue", forwardSize);
+      ImGui::Indent(20.0f);
+      for (size_t i = 1; i <= forwardSize; i++) {
+        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "%zu", i);
+        ImGui::SameLine();
+        ImGui::SetCursorPosX(55.0f);
+        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "|");
+        ImGui::SameLine();
+        RenderSongItem(forwardList[forwardSize - i], false);
+      }
+      ImGui::Unindent();
       ImGui::Separator();
     }
     if (player.isShuffleEnabled()) {
       ImGui::TextColored(ImVec4(0.6f, 0.4f, 0.8f, 1.0f), "Shuffle Mode ON");
       const auto &shuffleList = player.getShuffleManager().getShuffleList();
       size_t currentIdx = player.getShuffleManager().getCurrentIndex();
+      ImGui::Indent(20.0f);
       for (size_t i = currentIdx + 1; i < shuffleList.size(); i++) {
+        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "%zu",
+                           forwardSize + (i - currentIdx));
+        ImGui::SameLine();
+        ImGui::SetCursorPosX(55.0f);
+        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "|");
+        ImGui::SameLine();
         RenderSongItem(shuffleList[i], false);
       }
+      ImGui::Unindent();
       if (currentIdx + 1 >= shuffleList.size()) {
         ImGui::TextDisabled("Last song - will reshuffle on next");
       }
     } else {
+      int idx = forwardSize;
+      ImGui::Indent(20.0f);
       for (const Song *s : player.getQueueManager().getQueueList()) {
-        RenderSongItem(s, false);
+        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "%zu", ++idx);
+        ImGui::SameLine();
+        ImGui::SetCursorPosX(55.0f);
+        ImGui::TextColored(ImVec4(0.6f, 0.6f, 0.6f, 1), "|");
+        ImGui::SameLine();
+        RenderSongItem(s, false, true);
       }
+      ImGui::Unindent();
     }
     if (player.getQueueManager().getQueueSize() == 0 &&
         !player.isShuffleEnabled()) {
@@ -355,12 +470,23 @@ void RenderMainUI(char *pathBuffer) {
   float duration = player.engine.getTotalDuration();
   float barWidth = ImGui::GetWindowWidth();
 
-  // Now Playing info (centered)
+  // Now Playing info (centered, large font, fixed position)
+  float titleY = 15.0f; // Fixed Y position for title
+  ImGui::SetCursorPosY(titleY);
+
+  // Use global fontLarge (defined in main.cpp, declared in UIComponents.h)
   if (current) {
     std::string nowPlaying = current->title + " - " + current->artist;
+    auto fontLarge = ImGui::GetIO().Fonts->Fonts.Size > 1
+                         ? ImGui::GetIO().Fonts->Fonts[1]
+                         : nullptr;
+    if (fontLarge)
+      ImGui::PushFont(fontLarge);
     float textWidth = ImGui::CalcTextSize(nowPlaying.c_str()).x;
     ImGui::SetCursorPosX((barWidth - textWidth) / 2);
     ImGui::Text("%s", nowPlaying.c_str());
+    if (fontLarge)
+      ImGui::PopFont();
   } else {
     const char *noSong = "No song playing";
     float textWidth = ImGui::CalcTextSize(noSong).x;
@@ -368,28 +494,16 @@ void RenderMainUI(char *pathBuffer) {
     ImGui::TextDisabled("%s", noSong);
   }
 
-  ImGui::Spacing();
+  // Fixed position for controls (below title)
+  ImGui::SetCursorPosY(titleY + 40.0f);
 
   // Playback controls (centered)
   float buttonWidth = 40.0f;
   float shuffleWidth = 100.0f;
-  float smartPlaylistWidth = current ? 180.0f : 0.0f;
-  float totalControlsWidth =
-      buttonWidth * 3 + shuffleWidth + smartPlaylistWidth + 40.0f; // spacing
-  ImGui::SetCursorPosX((barWidth - totalControlsWidth) / 2);
+  float smartPlaylistWidth = 100.0f;
 
-  if (ImGui::Button("|<", ImVec2(buttonWidth, 0)))
-    player.playPrevious();
-  ImGui::SameLine();
-  if (ImGui::Button(player.engine.isPlaying() ? "||" : ">",
-                    ImVec2(buttonWidth, 0))) {
-    player.engine.togglePause();
-  }
-  ImGui::SameLine();
-  if (ImGui::Button(">|", ImVec2(buttonWidth, 0)))
-    player.playNext();
-  ImGui::SameLine();
-
+  ImGui::SetCursorPosX((barWidth - buttonWidth * 3) / 2 - shuffleWidth - 10.0f -
+                       60.0f);
   if (player.isShuffleEnabled()) {
     if (ImGui::Button("Shuffle: ON", ImVec2(shuffleWidth, 0)))
       player.disableShuffle();
@@ -397,19 +511,36 @@ void RenderMainUI(char *pathBuffer) {
     if (ImGui::Button("Shuffle: OFF", ImVec2(shuffleWidth, 0)))
       player.enableShuffle();
   }
-
+  ImGui::SameLine(0.0f, 60.0f);
+  ImFont *fontPlayer = ImGui::GetIO().Fonts->Fonts.Size > 1
+                           ? ImGui::GetIO().Fonts->Fonts[2]
+                           : nullptr;
+  ImGui::PushFont(fontPlayer);
+  if (ImGui::Button("|<", ImVec2(buttonWidth, 0)))
+    player.playPrevious();
+  ImGui::SameLine();
+  if (ImGui::Button(player.engine.isPlaying() ? "|  |" : ">",
+                    ImVec2(buttonWidth, 0))) {
+    player.engine.togglePause();
+  }
+  ImGui::SameLine();
+  if (ImGui::Button(">|", ImVec2(buttonWidth, 0)))
+    player.playNext();
+  ImGui::SameLine();
+  ImGui::PopFont();
   if (current) {
-    ImGui::SameLine();
+    ImGui::SameLine(0.0f, 60.0f);
     RenderSmartPlaylistButton(current);
   }
 
   ImGui::Spacing();
 
   // Progress bar (full width with time labels)
-  ImGui::Text("%s", formatTime(time).c_str());
+  ImGui::SetCursorPosY(titleY + 75.0f);
+  ImGui::Text("    %s", formatTime(time).c_str());
   ImGui::SameLine();
-
-  ImGui::PushItemWidth(barWidth - 150);
+  ImGui::SetCursorPosX(65.0f);
+  ImGui::PushItemWidth(barWidth - 135.0f);
   static float seekVal = 0.0f;
   static bool isDragging = false;
   if (!isDragging)
@@ -426,7 +557,7 @@ void RenderMainUI(char *pathBuffer) {
   ImGui::PopItemWidth();
 
   ImGui::SameLine();
-  ImGui::Text("%s", formatTime(duration).c_str());
+  ImGui::Text("   %s", formatTime(duration).c_str());
 
   ImGui::EndChild();
   ImGui::EndGroup();

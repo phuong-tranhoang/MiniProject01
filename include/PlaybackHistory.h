@@ -11,7 +11,7 @@
 class PlaybackHistory {
 private:
     std::stack<const Song*> history;
-    std::stack<const Song*> forward;
+    std::vector<const Song*> forward;
 
 public:
     /**===================================================
@@ -48,12 +48,20 @@ public:
     const Song* getForwardSong();
     /**===================================================
      * 
-     * Description: Get history list
+     * Description: Get history list (Display purpose)
      *
      * @param {none}
-     * @returns {std::vector<const Song*} - list in vector
+     * @returns {std::vector<const Song*} - History list
      */
     std::vector<const Song*> getHistoryList() const;
+    /**===================================================
+     * 
+     * Description: Get forward list
+     *
+     * @param {none}
+     * @returns {std::vector<const Song*} - Forward list
+     */
+    std::vector<const Song*> getForwardList() const;
     /**===================================================
      * 
      * Description: Add song to history stack
@@ -98,7 +106,7 @@ public:
      * 
      * Description: Return forward stack size
      *
-     * @param {size_t} - Size of stack
+     * @param {size_t} - Size of forward vector
      * @returns {none}
      */
     size_t getForwardSize() const;

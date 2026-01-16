@@ -3,7 +3,10 @@
 #define MINIAUDIO_IMPLEMENTATION
 
 #include "../include/AudioEngine.h"
+#include <filesystem>
 #include <iostream>
+
+namespace fs = std::filesystem;
 
 AudioEngine::AudioEngine() {
   // Initialization deferred to init() - called by MusicPlayer constructor
@@ -36,9 +39,14 @@ void AudioEngine::playFile(const std::string &filepath) {
 
   ma_uint32 flags = MA_SOUND_FLAG_DECODE | MA_SOUND_FLAG_ASYNC;
 
-  // Load new file (mp3/wav)
-  if (ma_sound_init_from_file(&engine, filepath.c_str(), flags, NULL, NULL,
-                              &sound) == MA_SUCCESS) {
+  // Convert UTF-8 path to wstring for proper Vietnamese/Unicode support
+  fs::path fsPath = fs::u8path(filepath);
+  std::wstring wpath = fsPath.wstring();
+
+  // miniaudio on Windows can use wchar_t* directly with
+  // ma_sound_init_from_file_w
+  if (ma_sound_init_from_file_w(&engine, wpath.c_str(), flags, NULL, NULL,
+                                &sound) == MA_SUCCESS) {
     ma_sound_start(&sound);
     isSoundLoaded = true;
   }

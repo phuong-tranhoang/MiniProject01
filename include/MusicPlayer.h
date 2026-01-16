@@ -10,6 +10,7 @@
 #include "PlaybackQueue.h"
 #include "ShuffleManager.h"
 #include "Song.h"
+#include <unordered_set>
 
 class MusicPlayer {
 private:
@@ -17,6 +18,7 @@ private:
   PlaybackQueue queue;
   ShuffleManager shuffleMgr;
   PlaybackHistory stack;
+  std::unordered_set<std::string> loadedFolders; // Track loaded folders
 
   bool isShuffleEn = false;
   const Song *current = nullptr;
@@ -105,6 +107,14 @@ public:
    * @returns {none}
    */
   void addSongToQueue(const Song *song);
+    /**===================================================
+   *
+   * Description: Remove song from queue
+   *
+   * @param {const Song*} song - Song to be removed
+   * @returns {none}
+   */
+  void removeSongFromQueue(const Song *song);
   /**===================================================
    *
    * Description: Get the number of songs in queue
@@ -208,7 +218,7 @@ public:
    * @param {const std::string&} albumName - Album name
    * @returns {none}
    */
-  void addAlbumToQueue(const std::string &albumName);
+  size_t addAlbumToQueue(const std::string &albumName);
   /**===================================================
    *
    * Description: Clear the queue and reset shuffle mode

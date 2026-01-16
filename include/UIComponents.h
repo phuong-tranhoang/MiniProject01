@@ -6,7 +6,6 @@
 #include "imgui.h"
 #include <string>
 
-
 // Tab enum for navigation
 enum Tab {
   TAB_LIBRARY,
@@ -17,7 +16,7 @@ enum Tab {
   TAB_HISTORY
 };
 
-// External state (defined in UIComponents.cpp)
+// External state (defined in main.cpp or UIComponents.cpp)
 extern Tab currentTab;
 extern MusicPlayer player;
 extern char searchBuf[128];
@@ -32,7 +31,8 @@ std::string formatTime(float seconds);
 bool containsString(const std::string &haystack, const std::string &needle);
 
 // Render functions
-void RenderSongItem(const Song *song, bool showAlbum = true);
+void RenderSongItem(const Song *song, bool showAlbum = true,
+                    bool inQueue = false);
 void RenderAlbumsTab();
 void RenderSmartPlaylistButton(const Song *current);
 void RenderToast();

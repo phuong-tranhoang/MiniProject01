@@ -3191,7 +3191,7 @@ ImFont* ImFontAtlas::AddFontFromFileTTF(const char* filename, float size_pixels,
         if (font_cfg_template == NULL || (font_cfg_template->Flags & ImFontFlags_NoLoadError) == 0)
         {
             IMGUI_DEBUG_LOG("While loading '%s'\n", filename);
-            IM_ASSERT_USER_ERROR(0, "Could not load font file!");
+            //IM_ASSERT_USER_ERROR(0, "Could not load font file!");
         }
         return NULL;
     }

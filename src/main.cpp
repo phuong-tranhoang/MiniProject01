@@ -28,19 +28,48 @@ int main(int, char **) {
   // Apply theme
   SetupTheme();
 
-  // Load font
+  // Load font with Vietnamese glyph range
   ImGuiIO &io = ImGui::GetIO();
-  ImFont *font =
-      io.Fonts->AddFontFromFileTTF("assets/SpaceGrotesk-Regular.ttf", 16.0f);
+
+  // Vietnamese glyph ranges (Latin + Vietnamese)
+  static const ImWchar vietnameseRanges[] = {
+      0x0020, 0x00FF, // Basic Latin + Latin Supplement
+      0x0102, 0x0103, // Ă ă
+      0x0110, 0x0111, // Đ đ
+      0x0128, 0x0129, // Ĩ ĩ
+      0x0168, 0x0169, // Ũ ũ
+      0x01A0, 0x01A1, // Ơ ơ
+      0x01AF, 0x01B0, // Ư ư
+      0x1EA0, 0x1EF9, // Vietnamese vowels with diacritics
+      0,
+  };
+
+  ImFontConfig cfg;
+  cfg.OversampleH = 2;
+  cfg.OversampleV = 1;
+
+  // Regular font (16px)
+  ImFont *font = io.Fonts->AddFontFromFileTTF("assets/SpaceGrotesk-Regular.ttf",
+                                              16.0f, &cfg, vietnameseRanges);
   if (!font)
     font = io.Fonts->AddFontFromFileTTF("../assets/SpaceGrotesk-Regular.ttf",
-                                        16.0f);
+                                        16.0f, &cfg, vietnameseRanges);
   if (!font) {
-    ImFontConfig cfg;
     cfg.SizePixels = 16.0f;
     io.Fonts->AddFontDefault(&cfg);
   }
 
+  // Large font (24px) for titles - global, declared in UIComponents.h
+  ImFont *fontLarge = io.Fonts->AddFontFromFileTTF(
+      "assets/SpaceGrotesk-Bold.ttf", 24.0f, &cfg, vietnameseRanges);
+  if (!fontLarge)
+    fontLarge = io.Fonts->AddFontFromFileTTF("../assets/SpaceGrotesk-Bold.ttf",
+                                             24.0f, &cfg, vietnameseRanges);
+  ImFont *fontPlayer = io.Fonts->AddFontFromFileTTF(
+      "assets/Death Star.otf", 16.0f, &cfg, vietnameseRanges);
+  if (!fontPlayer)
+    fontPlayer = io.Fonts->AddFontFromFileTTF("../assets/Death Star.otf", 16.0f,
+                                              &cfg, vietnameseRanges);
   // Path buffer for library loading
   static char pathBuffer[256] = "C:/";
 

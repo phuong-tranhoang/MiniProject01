@@ -10,7 +10,6 @@ MusicLibrary::~MusicLibrary() {}
 const std::vector<Song> &MusicLibrary::getAllSongs() const { return songs; }
 
 bool MusicLibrary::addSong(const Song &song) {
-  // Check capacity
   bool reallocated = false;
   if (songs.size() >= songs.capacity()) {
     reallocated = true;
@@ -26,6 +25,7 @@ bool MusicLibrary::addSong(const Song &song) {
   songIndexByID[song.id] = songPtr;
   songIndexByTitle[song.title] = songPtr;
   artistIndex[song.artist].push_back(songPtr);
+  albumIndex[song.album].push_back(songPtr);
   return reallocated; //
 }
 
@@ -93,4 +93,25 @@ void MusicLibrary::clear() {
   songIndexByID.clear();
   songIndexByTitle.clear();
   artistIndex.clear();
+  albumIndex.clear();
+  Song::resetIdCounter(); // Reset ID counter for next library load
+}
+
+const std::unordered_map<std::string, std::vector<const Song *>> &
+MusicLibrary::getArtistIndex() const {
+  return artistIndex;
+}
+
+const std::map<std::string, std::vector<const Song *>> &
+MusicLibrary::getAlbumIndex() const {
+  return albumIndex;
+}
+
+std::vector<const Song *> MusicLibrary::getSortedSongs() const {
+  std::vector<const Song *> sorted;
+  // songIndexByTitle is a std::map (ordered by key)
+  for (const auto &pair : songIndexByTitle) {
+    sorted.push_back(pair.second);
+  }
+  return sorted;
 }

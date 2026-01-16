@@ -15,6 +15,7 @@ private:
   std::unordered_map<int, const Song *> songIndexByID;
   std::map<std::string, const Song *> songIndexByTitle;
   std::unordered_map<std::string, std::vector<const Song *>> artistIndex;
+  std::map<std::string, std::vector<const Song*>> albumIndex;
 
 public:
   /**===================================================
@@ -126,7 +127,7 @@ public:
    * Description: Find song by Artist using map
    *
    * @param {string} artist - Artist for search
-   * @returns {const Song*} - Pointer to song in library
+   * @returns {const vector<Song*.} - Pointer to song in library
    * @note return nullptr if not found
    */
   std::vector<const Song *> findSongByArtist(const std::string &title);
@@ -138,6 +139,33 @@ public:
    * @returns {none}
    */
   void clear();
+  /**===================================================
+   *
+   * Description: Get the artist index map directly
+   *
+   * @param {none}
+   * @returns {const unordered_map<string, vector<Song*>>&} reference to artist
+   * index
+   */
+  const std::unordered_map<std::string, std::vector<const Song *>>& getArtistIndex() const;
+      /**===================================================
+   *
+   * Description: Find song by Album using map
+   *
+   * @param {string} album - album name
+   * @returns {const Song*}
+   * @note return nullptr if not found
+   */
+  const std::map<std::string, std::vector<const Song*>>& getAlbumIndex() const;
+
+  /**===================================================
+   *
+   * Description: Get all songs sorted by title (A-Z)
+   *
+   * @param {none}
+   * @returns {vector<const Song*>} sorted vector of song pointers
+   */
+  std::vector<const Song *> getSortedSongs() const;
 };
 
 #endif

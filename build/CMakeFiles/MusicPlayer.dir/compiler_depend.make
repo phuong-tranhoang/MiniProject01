@@ -1533,6 +1533,7 @@ CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj: D:/PHUONG/FPT/CPP/MiniProjec
   C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bit \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
@@ -1542,6 +1543,8 @@ CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj: D:/PHUONG/FPT/CPP/MiniProjec
   C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/chrono.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/codecvt.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h \
@@ -1549,6 +1552,10 @@ CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj: D:/PHUONG/FPT/CPP/MiniProjec
   C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_dir.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_fwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_ops.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_path.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
@@ -1557,8 +1564,11 @@ CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj: D:/PHUONG/FPT/CPP/MiniProjec
   C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_conv.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets_nonio.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets_nonio.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h \
@@ -1568,13 +1578,18 @@ CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj: D:/PHUONG/FPT/CPP/MiniProjec
   C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/parse_numbers.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/quoted_string.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/specfun.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
@@ -1587,6 +1602,7 @@ CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj: D:/PHUONG/FPT/CPP/MiniProjec
   C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
@@ -1595,31 +1611,40 @@ CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj: D:/PHUONG/FPT/CPP/MiniProjec
   C:/msys64/ucrt64/include/c++/15.2.0/cerrno \
   C:/msys64/ucrt64/include/c++/15.2.0/clocale \
   C:/msys64/ucrt64/include/c++/15.2.0/cmath \
+  C:/msys64/ucrt64/include/c++/15.2.0/codecvt \
   C:/msys64/ucrt64/include/c++/15.2.0/concepts \
   C:/msys64/ucrt64/include/c++/15.2.0/cstddef \
   C:/msys64/ucrt64/include/c++/15.2.0/cstdint \
   C:/msys64/ucrt64/include/c++/15.2.0/cstdio \
   C:/msys64/ucrt64/include/c++/15.2.0/cstdlib \
+  C:/msys64/ucrt64/include/c++/15.2.0/ctime \
   C:/msys64/ucrt64/include/c++/15.2.0/cwchar \
   C:/msys64/ucrt64/include/c++/15.2.0/cwctype \
   C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
   C:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
   C:/msys64/ucrt64/include/c++/15.2.0/exception \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/filesystem \
   C:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
+  C:/msys64/ucrt64/include/c++/15.2.0/iomanip \
   C:/msys64/ucrt64/include/c++/15.2.0/ios \
   C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
   C:/msys64/ucrt64/include/c++/15.2.0/iostream \
   C:/msys64/ucrt64/include/c++/15.2.0/istream \
   C:/msys64/ucrt64/include/c++/15.2.0/limits \
+  C:/msys64/ucrt64/include/c++/15.2.0/locale \
   C:/msys64/ucrt64/include/c++/15.2.0/math.h \
   C:/msys64/ucrt64/include/c++/15.2.0/new \
   C:/msys64/ucrt64/include/c++/15.2.0/ostream \
   C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ratio \
+  C:/msys64/ucrt64/include/c++/15.2.0/sstream \
   C:/msys64/ucrt64/include/c++/15.2.0/stdexcept \
   C:/msys64/ucrt64/include/c++/15.2.0/stdlib.h \
   C:/msys64/ucrt64/include/c++/15.2.0/streambuf \
@@ -1651,7 +1676,9 @@ CMakeFiles/MusicPlayer.dir/src/AudioEngine.cpp.obj: D:/PHUONG/FPT/CPP/MiniProjec
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h \
   C:/msys64/ucrt64/include/cderr.h \
   C:/msys64/ucrt64/include/cguid.h \
   C:/msys64/ucrt64/include/combaseapi.h \
@@ -3069,6 +3096,7 @@ CMakeFiles/MusicPlayer.dir/src/UIComponents.cpp.obj: D:/PHUONG/FPT/CPP/MiniProje
   C:/msys64/ucrt64/include/c++/15.2.0/iomanip \
   C:/msys64/ucrt64/include/c++/15.2.0/ios \
   C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
+  C:/msys64/ucrt64/include/c++/15.2.0/iostream \
   C:/msys64/ucrt64/include/c++/15.2.0/istream \
   C:/msys64/ucrt64/include/c++/15.2.0/list \
   C:/msys64/ucrt64/include/c++/15.2.0/locale \
@@ -3394,11 +3422,11 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/tr1/bessel_function.tcc:
 
-C:/msys64/ucrt64/include/c++/15.2.0/sstream:
-
 C:/msys64/ucrt64/include/winsvc.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/tr1/beta_function.tcc:
+
+C:/msys64/ucrt64/include/c++/15.2.0/sstream:
 
 C:/msys64/ucrt64/include/_mingw_off_t.h:
 
@@ -3454,9 +3482,9 @@ C:/msys64/ucrt64/include/combaseapi.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxtransposeintrin.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/iomanip:
-
 C:/msys64/ucrt64/include/c++/15.2.0/cstdlib:
+
+C:/msys64/ucrt64/include/c++/15.2.0/iomanip:
 
 D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/PlaybackQueue.h:
 
@@ -3471,6 +3499,8 @@ C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h:
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h:
 
 C:/msys64/ucrt64/include/corecrt_stdio_config.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h:
 
@@ -3499,6 +3529,8 @@ C:/msys64/ucrt64/include/ktmtypes.h:
 C:/msys64/ucrt64/include/datetimeapi.h:
 
 C:/msys64/ucrt64/include/crtdefs.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_conv.h:
 
 C:/msys64/ucrt64/include/dde.h:
 
@@ -3558,33 +3590,33 @@ C:/msys64/ucrt64/include/joystickapi.h:
 
 C:/msys64/ucrt64/include/handleapi.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bit:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h:
+C:/msys64/ucrt64/include/heapapi.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/quoted_string.h:
 
-C:/msys64/ucrt64/include/heapapi.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bit:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/random:
 
 C:/msys64/ucrt64/include/inaddr.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/filesystem:
-
 C:/msys64/ucrt64/include/limits.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/filesystem:
 
 C:/msys64/ucrt64/include/malloc.h:
 
 C:/msys64/ucrt64/include/mcx.h:
+
+C:/msys64/mingw64/include/taglib/tbytevector.h:
 
 C:/msys64/ucrt64/include/mciapi.h:
 
 C:/msys64/ucrt64/include/pshpack1.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h:
-
-C:/msys64/mingw64/include/taglib/tbytevector.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2satcvtintrin.h:
 
@@ -3794,9 +3826,9 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h:
 
 C:/msys64/ucrt64/include/timeapi.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/ctime:
-
 C:/msys64/ucrt64/include/timezoneapi.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/ctime:
 
 C:/msys64/ucrt64/include/tvout.h:
 
@@ -3824,9 +3856,9 @@ C:/msys64/ucrt64/include/windef.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxtileintrin.h:
 
-C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vnnivlintrin.h:
-
 C:/msys64/mingw64/include/taglib/tvariant.h:
+
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vnnivlintrin.h:
 
 C:/msys64/ucrt64/include/windows.h:
 
@@ -3880,11 +3912,11 @@ C:/msys64/ucrt64/include/wow64apiset.h:
 
 C:/msys64/ucrt64/include/wtypes.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h:
+
 C:/msys64/ucrt64/include/wtypesbase.h:
 
 D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/backends/imgui_impl_glfw.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vlbwintrin.h:
 
@@ -3898,15 +3930,15 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxavx512intrin.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h:
+
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxbf16intrin.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/codecvt.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_ops.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxcomplexintrin.h:
 
@@ -3938,9 +3970,9 @@ C:/msys64/ucrt64/include/c++/15.2.0/tr1/modified_bessel_func.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/codecvt:
-
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2bf16intrin.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/codecvt:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2copyintrin.h:
 
@@ -4027,6 +4059,8 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/f16cintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/float.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets_nonio.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/fma4intrin.h:
 
@@ -4122,8 +4156,6 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/vpclmulqdqintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wbnoinvdintrin.h:
 
-C:/msys64/mingw64/include/taglib/tlist.h:
-
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wmmintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86gprintrin.h:
@@ -4152,6 +4184,8 @@ D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/tr1/ell_integral.tcc:
 
+C:/msys64/ucrt64/include/c++/15.2.0/locale:
+
 D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/backends/imgui_impl_opengl3.h:
 
 D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/backends/imgui_impl_opengl3_loader.h:
@@ -4174,9 +4208,9 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/move.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h:
-
 C:/msys64/mingw64/include/taglib/tag.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h:
 
@@ -4224,11 +4258,11 @@ D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui_draw.cpp:
 
 D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imstb_truetype.h:
 
-D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui_tables.cpp:
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/src/MusicPlayer.cpp:
 
 C:/msys64/mingw64/include/taglib/tlist.tcc:
 
-D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/src/MusicPlayer.cpp:
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/imgui-master/imgui_tables.cpp:
 
 C:/msys64/ucrt64/include/c++/15.2.0/string_view:
 
@@ -4242,6 +4276,8 @@ D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/src/AudioEngine.cpp:
 
 C:/msys64/ucrt64/include/_mingw_stat64.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h:
@@ -4251,6 +4287,12 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h:
 C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_dir.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_fwd.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_path.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h:
 
@@ -4262,6 +4304,8 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.tcc:
 
 D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/AudioEngine.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets_nonio.tcc:
+
 C:/msys64/ucrt64/include/c++/15.2.0/clocale:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h:
@@ -4272,13 +4316,25 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h:
 
+C:/msys64/ucrt64/include/io.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/parse_numbers.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h:
 
@@ -4292,21 +4348,23 @@ C:/msys64/ucrt64/include/c++/15.2.0/cstddef:
 
 C:/msys64/ucrt64/include/c++/15.2.0/cwctype:
 
-C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h:
-
 C:/msys64/ucrt64/include/c++/15.2.0/exception:
+
+C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/ios:
-
 C:/msys64/ucrt64/include/c++/15.2.0/bits/deque.tcc:
+
+C:/msys64/ucrt64/include/c++/15.2.0/ios:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/random.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/iosfwd:
+
+C:/msys64/ucrt64/include/c++/15.2.0/ratio:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_list.h:
 
@@ -4330,8 +4388,6 @@ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h:
 
-C:/msys64/ucrt64/include/io.h:
-
 C:/msys64/ucrt64/include/locale.h:
 
 C:/msys64/ucrt64/include/pthread.h:
@@ -4341,8 +4397,6 @@ C:/msys64/ucrt64/include/pthread_time.h:
 C:/msys64/ucrt64/include/c++/15.2.0/map:
 
 C:/msys64/ucrt64/include/sched.h:
-
-C:/msys64/mingw64/include/taglib/tmap.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_stack.h:
 
@@ -4362,9 +4416,9 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h:
-
 C:/msys64/mingw64/include/taglib/tstringlist.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tree.h:
 
@@ -4386,7 +4440,11 @@ C:/msys64/mingw64/include/taglib/tfile.h:
 
 C:/msys64/mingw64/include/taglib/tiostream.h:
 
+C:/msys64/mingw64/include/taglib/tlist.h:
+
 C:/msys64/mingw64/include/taglib/tmap.h:
+
+C:/msys64/mingw64/include/taglib/tmap.tcc:
 
 C:/msys64/mingw64/include/taglib/tstring.h:
 
@@ -4396,29 +4454,7 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_dir.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_fwd.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_path.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_conv.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets_nonio.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets_nonio.tcc:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/parse_numbers.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h:
-
 C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h:
 
@@ -4434,11 +4470,7 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_relops.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h:
-
 C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_set.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/locale:
 
 C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h:
 
@@ -4446,15 +4478,11 @@ C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_algorithm_defs.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/queue:
 
-C:/msys64/ucrt64/include/c++/15.2.0/ratio:
-
 C:/msys64/ucrt64/include/c++/15.2.0/stack:
 
 C:/msys64/ucrt64/include/c++/15.2.0/unordered_set:
 
 C:/msys64/ucrt64/include/c++/15.2.0/utility:
-
-C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h:
 
 D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/include/MusicPlayer.h:
 
