@@ -399,3 +399,24 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# =============================================
+# Project-specific exclusions
+# =============================================
+
+# Build output directories
+build/
+out/
+
+# Cache directories
+.cache/
+
+# Static libraries (large binaries)
+lib/*.a
+lib/*.lib
+
+# Audio test files (if any)
+*.mp3
+*.wav
+*.flac
+*.ogg
