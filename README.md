@@ -99,4 +99,4 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ## Author
 
-**PhuongTH33** - FPT University
+** Phuong Tran Hoang ** 
