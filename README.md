@@ -1,4 +1,4 @@
-# PhuongTH33 Music Player 🎵
+# Phuong Tran Hoang Music Player 🎵
 
 A modern C++ music player with a beautiful ImGui interface, featuring shuffle, queue management, and Vietnamese language support.
 
@@ -28,7 +28,7 @@ A modern C++ music player with a beautiful ImGui interface, featuring shuffle, q
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/MiniProject01.git
+git clone https://github.com/phuong-tranhoang/MiniProject01.git
 cd MiniProject01
 
 # Create build directory
