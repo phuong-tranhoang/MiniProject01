@@ -39,26 +39,26 @@ std::vector<Song>::const_iterator MusicLibrary::end() const {
 
 size_t MusicLibrary::getSize() const { return songs.size(); }
 
-void MusicLibrary::initIDMap() {
-  for (int i = 0; i < songs.size(); ++i) {
-    const Song *ptr = &songs[i];
-    songIndexByID[ptr->id] = ptr;
-  }
-}
+// void MusicLibrary::initIDMap() {
+//   for (int i = 0; i < songs.size(); ++i) {
+//     const Song *ptr = &songs[i];
+//     songIndexByID[ptr->id] = ptr;
+//   }
+// }
 
-void MusicLibrary::initTitleMap() {
-  for (int i = 0; i < songs.size(); ++i) {
-    const Song *ptr = &songs[i];
-    songIndexByTitle[ptr->title] = ptr;
-  }
-}
+// void MusicLibrary::initTitleMap() {
+//   for (int i = 0; i < songs.size(); ++i) {
+//     const Song *ptr = &songs[i];
+//     songIndexByTitle[ptr->title] = ptr;
+//   }
+// }
 
-void MusicLibrary::initArtistMap() {
-  for (int i = 0; i < songs.size(); ++i) {
-    const Song *ptr = &songs[i];
-    artistIndex[ptr->artist].push_back(ptr);
-  }
-}
+// void MusicLibrary::initArtistMap() {
+//   for (int i = 0; i < songs.size(); ++i) {
+//     const Song *ptr = &songs[i];
+//     artistIndex[ptr->artist].push_back(ptr);
+//   }
+// }
 
 const Song *MusicLibrary::findSongByID(int id) const {
   auto it = songIndexByID.find(id);

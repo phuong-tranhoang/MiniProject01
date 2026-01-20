@@ -3,6 +3,9 @@ project(MusicPlayer)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# --- OPTIONS ---
+option(BUILD_TESTS "Build unit tests" OFF)
+
 # --- 1. SEARCH PATHS (Crucial for MSYS2/Windows) ---
 # Tell CMake to look in the UCRT64 and MinGW64 folders
 set(MSYS_UCRT "C:/msys64/ucrt64")
@@ -65,13 +68,66 @@ set(IMGUI_SOURCES
     ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
 )
 
-# --- 4. EXECUTABLE & LINKING ---
-add_executable(MusicPlayer ${SOURCES} ${IMGUI_SOURCES})
+# --- 4. MAIN EXECUTABLE ---
+if(NOT BUILD_TESTS)
+    add_executable(MusicPlayer ${SOURCES} ${IMGUI_SOURCES})
 
-# Link libraries: TagLib + GLFW + OpenGL + System Libs
-target_link_libraries(MusicPlayer 
-    ${TAGLIB_LIB} 
-    ${GLFW_LIB} 
-    opengl32 
-    winmm
-)
+    # Link libraries: TagLib + GLFW + OpenGL + System Libs
+    target_link_libraries(MusicPlayer 
+        ${TAGLIB_LIB} 
+        ${GLFW_LIB} 
+        opengl32 
+        winmm
+    )
+endif()
+
+# --- 5. TESTING (when BUILD_TESTS=ON) ---
+if(BUILD_TESTS)
+    enable_testing()
+    
+    # Find Google Test
+    find_package(GTest REQUIRED)
+    include_directories(${GTEST_INCLUDE_DIRS})
+    
+    # Coverage flags
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage -fprofile-arcs -ftest-coverage")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage")
+    
+    # Source files for testing (exclude main.cpp)
+    set(TEST_SOURCES
+        src/MusicLibrary.cpp
+        src/MusicPlayer.cpp
+        src/AudioEngine.cpp
+        src/PlaybackQueue.cpp
+        src/PlaybackHistory.cpp
+        src/ShuffleManager.cpp
+    )
+    
+    # Test files
+    file(GLOB TEST_FILES "tests/*.cpp")
+    
+    # Test executable
+    add_executable(MusicPlayerTests ${TEST_FILES} ${TEST_SOURCES})
+    
+    target_link_libraries(MusicPlayerTests 
+        GTest::GTest 
+        GTest::Main
+        ${TAGLIB_LIB}
+        winmm
+    )
+    
+    # Register tests with CTest
+    add_test(NAME MusicPlayerTests COMMAND MusicPlayerTests)
+    
+    # Coverage target
+    add_custom_target(coverage
+        COMMAND ${CMAKE_COMMAND} -E make_directory coverage
+        COMMAND lcov --capture --directory . --output-file coverage/coverage.info
+        COMMAND lcov --remove coverage/coverage.info '/usr/*' '*/include/*' '*/tests/*' --output-file coverage/coverage_filtered.info
+        COMMAND genhtml coverage/coverage_filtered.info --output-directory coverage
+        COMMAND ${CMAKE_COMMAND} -E echo "Coverage report: ${CMAKE_BINARY_DIR}/coverage/index.html"
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+        DEPENDS MusicPlayerTests
+        COMMENT "Generating code coverage report..."
+    )
+endif()

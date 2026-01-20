@@ -1,0 +1,3 @@
+C:\msys64\ucrt64\bin\cmake.exe -E rm -f CMakeFiles\MusicPlayerTests.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\MusicPlayerTests.dir/objects.a @CMakeFiles\MusicPlayerTests.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe  -g -O0 --coverage -fprofile-arcs -ftest-coverage -g  --coverage -Wl,--whole-archive CMakeFiles\MusicPlayerTests.dir/objects.a -Wl,--no-whole-archive -o MusicPlayerTests.exe -Wl,--out-implib,libMusicPlayerTests.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MusicPlayerTests.dir\linkLibs.rsp

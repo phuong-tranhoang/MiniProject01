@@ -1,0 +1,5 @@
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/build_test/CMakeFiles/MusicPlayerTests.dir
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/build_test/CMakeFiles/coverage.dir
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/build_test/CMakeFiles/test.dir
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/build_test/CMakeFiles/edit_cache.dir
+D:/PHUONG/FPT/CPP/MiniProject/MiniProject01/build_test/CMakeFiles/rebuild_cache.dir

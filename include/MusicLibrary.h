@@ -15,7 +15,7 @@ private:
   std::unordered_map<int, const Song *> songIndexByID;
   std::map<std::string, const Song *> songIndexByTitle;
   std::unordered_map<std::string, std::vector<const Song *>> artistIndex;
-  std::map<std::string, std::vector<const Song*>> albumIndex;
+  std::map<std::string, std::vector<const Song *>> albumIndex;
 
 public:
   /**===================================================
@@ -83,7 +83,7 @@ public:
    * @note key: ID
    * @note value: pointer to song (in library)
    */
-  void initIDMap();
+  // void initIDMap();
   /**===================================================
    *
    * Description: Initialize and populate Title map (auto balancing BST)
@@ -93,7 +93,7 @@ public:
    * @note key: title
    * @note value: pointer to song (in library)
    */
-  void initTitleMap();
+  // void initTitleMap();
   /**===================================================
    *
    * Description: Initialize and populate Artist hashmap
@@ -103,7 +103,7 @@ public:
    * @note key: artist
    * @note value: vector pointers to songs
    */
-  void initArtistMap();
+  // void initArtistMap();
   /**===================================================
    *
    * Description: Find song by ID using hashmap
@@ -147,8 +147,9 @@ public:
    * @returns {const unordered_map<string, vector<Song*>>&} reference to artist
    * index
    */
-  const std::unordered_map<std::string, std::vector<const Song *>>& getArtistIndex() const;
-      /**===================================================
+  const std::unordered_map<std::string, std::vector<const Song *>> &
+  getArtistIndex() const;
+  /**===================================================
    *
    * Description: Find song by Album using map
    *
@@ -156,7 +157,7 @@ public:
    * @returns {const Song*}
    * @note return nullptr if not found
    */
-  const std::map<std::string, std::vector<const Song*>>& getAlbumIndex() const;
+  const std::map<std::string, std::vector<const Song *>> &getAlbumIndex() const;
 
   /**===================================================
    *

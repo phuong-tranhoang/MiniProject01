@@ -210,6 +210,10 @@ void MusicPlayer::clearQueue() {
 
 PlaybackQueue MusicPlayer::generateSmartPlaylist(const Song *startSong,
                                                  size_t maxSize) {
+
+  if (startSong == nullptr) {
+    return {};
+  }
   smartPlaylist.clearQueue();          // Clear smart playlist
   std::queue<std::string> searchQueue; // Search queue (by artist and album)
   std::unordered_set<const Song *> visited; // Contain pointers to song
