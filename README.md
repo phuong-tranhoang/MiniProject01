@@ -1,6 +1,6 @@
 # Phuong Tran Hoang Music Player 🎵
 
-A modern C++ music player with a beautiful ImGui interface, featuring shuffle, queue management, and Vietnamese language support.
+A modern C++ music player with ImGui interface, featuring shuffle, queue management, and Vietnamese language support.
 
 ![C++](https://img.shields.io/badge/C++-17-blue) ![ImGui](https://img.shields.io/badge/UI-ImGui-orange) ![miniaudio](https://img.shields.io/badge/Audio-miniaudio-green)
 
@@ -92,10 +92,6 @@ MiniProject01/
 | [ImGui](https://github.com/ocornut/imgui) | User interface | MIT |
 | [GLFW](https://www.glfw.org/) | Window/Input | Zlib |
 | [TagLib](https://taglib.org/) | Audio metadata | LGPL/MPL |
-
-## License
-
-MIT License - See [LICENSE](LICENSE) for details.
 
 ## Author
 
